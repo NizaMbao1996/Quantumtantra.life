@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantumtantra.life - Bios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+        }
+        h2 {
+            margin-top: 20px;
+            display: inline-block; /* To align with images */
+        }
+        .slogan {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 0;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex; /* Flexbox to align name and image */
+            align-items: center; /* Center the items vertically */
+        }
+        img.large {
+            width: 100px; /* Large square size */
+            height: 100px; /* Maintain square aspect ratio */
+            object-fit: cover; /* Ensure the image covers the square area */
+            margin-right: 10px; /* Space between image and name */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Quantum Tantra Loaded");
+            
+            // Dynamic image loading
+            const images = {
+                "anna": "images/Anna Scheer.jpg",
+                "corynna": "images/Dr Corynna.jpg",
+                "astarte": "images/Astarte Deva.jpg"
+            };
+
+            // Check the hash in the URL to load the corresponding bio
+            const hash = window.location.hash.substring(1);
+            const section = document.querySelector(`section[data-bio="${hash}"]`);
+            
+            if (section) {
+                const img = document.createElement('img');
+                img.src = images[hash];
+                img.alt = section.querySelector('h2').innerText;
+                img.className = 'large'; // Apply class for styling
+
+                // Append the image next to the respective section header (h2)
+                section.insertBefore(img, section.childNodes[0]); // Insert before the first child of the section (which is the h2)
+            }
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Quantumtantra.life - </h1>
+    <p>Meet our presenters and learn about their journeys.</p>
+</header>
+
+<p class="slogan"></p>
+
+<section data-bio="anna">
+    <h2>Anna Scheer</h2>
+    <div>
+        <p>Anna is a certified Bodysex®️ coach through the Betty Dodson Association in New York and offers emancipating sex education through pleasure-focused coaching, workshops, and retreats for women and female bodied people. Her mission is to support women in removing shame and guilt around their sexual pleasure and replacing it with self-knowledge—particularly around the female body and the female model of arousal. She was fortunate to grow up in a sex-positive family, where sex was never a taboo subject...</p>
+    </div>
+</section>
+
+<section data-bio="astarte">
+    <h2>Astarte Deva</h2>
+    <div>
+        <p>Astarte is a Certified Breathwork Facilitator, Certified Tantra Teacher, Meditation Teacher, Certified
+Somatic Stress Release Therapy, Reiki & Plant Medicine Assisted Psychotherapy
+Astarte has been a Reiki Master, Holistic Healer & Practitioner since 1997. She
+completed Usui Reiki, Kundalini Reiki, Shamballa Reiki, Tera-Mei Seichem and
+Kundalini Reiki Master Certifications from 1997 to 2008. She completed Yoga
+Teacher Trainings from 2000 to 2008, from Ashtanga Yoga, Hatha Yoga, Viinyasa 
+Yoga and Classic Yoga. She completed a 5 Element Shiatsu and Bodymind 
+Acupressure Training in 2002. Astarte became a Relationship, Intimacy & Tantra
+Coach in 2010. After the love of her life passed away in 2022, she completed a 1
+year Certified Conscious Connected Breathwork Facilitator and Teacher
+Program. She also completed a one year Somatic Stress Release Therapy
+Practitioner Certification Program. And she completed a 2 year Tantra Holistic
+Health & Wellness Certification Program. She has written several books specific
+to the healing for women and is completing her next book for women called Great
+Sex After Marriage, Empowering the Married Goddess in the Bedroom. Her next
+book, in honor of her late husband, is geared towards teaching the couple to help
+each other grow, heal and transform together inside of the safe container of an
+intimate relationship. This follows the book geared towards women called: The
+Heart On, Opening the Heart of the Beloved, specific to help women heal their
+deep seated fear to receive love, tools to help her partner and help him as well,
+and practices of creating deep intimacy, creating forgiveness, acceptance and
+love on a regular basis.
+Private Sessions with Astarte are available online and in person. She helps
+women find their voice, couples find harmony and soul men go deeper on their
+spiritual journey. She helps people come back to balance, find inner joy and bliss.
+Astarte offers multiple modalities for couples, women and individuals and her
+integrative style of helping people is unique because of her hands-on experience
+working one on one with people for many years. She helps women with
+depression, repression, stress, anxiety, grief, relationship problems, trauma,
+communication to be authentically related and create deep profound self love
+and love with her partner, physical health challenges, sleep issues, sexual
+problems, sexual trauma, physical pain, the inner child, being fully self
+expressed, communication challenges and to harness self love and feel more peace within...</p>
+    </div>
+</section>
+
+<section data-bio="corynna">
+    <h2>Dr C</h2>
+    <div>
+        <p>Dr Corynna Clarke has been teaching Tantra for over 38 years. She has helped countless women overcome various sexual traumas and become empowered sexual Goddesses!! She’s been on the front page of the Wall Street Journal as well as traveling the world to study a variety of traditions and religions. She is a Certified Tantra Educator through Source School of Tantra Yoga, is a Holistic Health Practitioner and has a Doctor of Divinity in Spiritual Counseling. She continues her ministry by working with women, those who identify as female as well as couples in virtual and private, in-person settings like the comfort of their own homes. She also leads workshops and seminars all over the world, guiding them to overcome limitations, facilitating breakthroughs and providing coaching, ongoing support and mastery of her newly developed system Quantum Tantra to level their realities on a continual basis and providing quantum leaps in all aspects of their lives...</p>
+    </div>
+</section>
+
+<footer>
+    <p>Quantumtantra.life</p>
+    <p>(Quantum Tantra 2025 All rights reserved)</p>
+</footer>
+
+</body>
+</html>
