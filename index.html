@@ -4,116 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantumtantra.life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #6a3093;
+            --primary-gradient: linear-gradient(135deg, #6a3093 0%, #a044ff 100%);
+            --secondary-color: #f5f0ff;
+            --text-color: #333;
+            --light-text: #666;
+            --white: #fff;
+            --shadow: 0 4px 20px rgba(106, 48, 147, 0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
         }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
         header {
             text-align: center;
-            padding: 24px 10px;
-            background-color: #007BFF;
-            color: white;
+            padding: 40px 20px;
+            background: var(--primary-gradient);
+            color: var(--white);
+            box-shadow: var(--shadow);
         }
-        .slogan {
-            font-size: 1.2em;
-            font-weight: bold;
-            text-align: center;
-            margin: 16px 0 0 0;
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
-        main {
-            max-width: 700px;
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 20px 0;
+            opacity: 0.9;
         }
+
+        .slogan {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .bio-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .bio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(106, 48, 147, 0.2);
+        }
+
         .bio-preview {
             display: flex;
             align-items: center;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            margin-bottom: 24px;
-            padding: 20px;
-            gap: 18px;
+            padding: 25px;
+            gap: 25px;
+            cursor: pointer;
         }
+
         .bio-img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 50%;
             flex-shrink: 0;
+            border: 3px solid var(--primary-color);
+            transition: var(--transition);
         }
+
         .bio-text {
             flex: 1;
         }
+
         .bio-title {
-            margin: 0 0 8px 0;
-            font-size: 1.5em;
-        }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
+            font-family: 'Playfair Display', serif;
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+            color: var(--primary-color);
         }
 
-        /* Added styles for footer social links and icons */
+        .bio-summary {
+            margin-bottom: 15px;
+            color: var(--light-text);
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+        }
+
+        .read-more-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(106, 48, 147, 0.3);
+        }
+
+        .bio-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding: 0 25px;
+        }
+
+        .bio-details.expanded {
+            max-height: 2000px;
+            padding-bottom: 25px;
+        }
+
+        .bio-details p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
         footer {
             text-align: center;
-            padding: 14px 10px;
-            background-color: #007BFF;
-            color: white;
-            font-size: 0.95em;
-        }
-        footer h3 {
-            margin-top: 15px; /* Space above the social heading */
-            margin-bottom: 5px; /* Space below the social heading */
-            color: white; /* Ensure heading is white */
-            font-size: 1.1em; /* Adjust heading size */
-        }
-        .social-links {
-            display: flex; /* Use flexbox to arrange links and icons */
-            justify-content: center; /* Center the social items */
-            gap: 20px; /* Space between each social media item */
-            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-        }
-        .social-item {
-            display: flex;
-            flex-direction: column; /* Stack the text and icon vertically */
-            align-items: center; /* Center the text and icon horizontally */
-        }
-        .social-item a {
-            color: white; /* Set link color to white */
-            text-decoration: none; /* Remove underline by default */
-            font-weight: normal; /* Remove bold from social links */
-            margin-bottom: 5px; /* Space between the text and the icon */
-        }
-        .social-item a:hover {
-             text-decoration: underline;
-        }
-        .social-item img {
-            width: 30px; /* Adjust icon size as needed */
-            height: auto; /* Maintain aspect ratio */
-            vertical-align: middle; /* Align icons vertically */
+            padding: 30px 20px;
+            background: var(--primary-gradient);
+            color: var(--white);
+            margin-top: 40px;
         }
 
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .slogan {
+                font-size: 1.5rem;
+            }
+
+            .bio-preview {
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .bio-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .bio-title {
+                font-size: 1.5rem;
+            }
+        }
 
         @media (max-width: 600px) {
             .bio-preview {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 10px;
+                text-align: center;
             }
+
             .bio-img {
-                width: 100%;
-                max-width: 200px;
-                height: auto;
-                margin-bottom: 10px;
+                margin: 0 auto 15px;
+            }
+
+            .bio-title {
+                text-align: center;
+            }
+
+            .read-more-btn {
+                display: block;
+                margin: 0 auto;
             }
         }
     </style>
@@ -122,39 +219,99 @@
 
 <header>
     <h1>Quantumtantra.life</h1>
-    <p>Empowering individuals through transformative practices.</p>
+    <p>Empowering individuals through transformative practices</p>
 </header>
 
-<div class="slogan">Meet our presenters</div>
+<div class="slogan">Meet Our Presenters</div>
 
 <main>
     <!-- Anna Scheer -->
-    <section class="bio-preview">
-        <img src="images/Anna Scheer.jpg" alt="Anna Scheer" class="bio-img">
-        <div class="bio-text">
-            <h2 class="bio-title">Anna Scheer</h2>
-            <p>Anna is a body sex coach through Betty Dodson.</p>
-            <a href="bio.html#anna">Read More</a>
+    <section class="bio-card">
+        <div class="bio-preview" onclick="toggleBio('anna')">
+            <img src="assets/images/Anna Scheer.jpg" alt="Anna Scheer" class="bio-img">
+            <div class="bio-text">
+                <h2 class="bio-title">Anna Scheer</h2>
+                <p class="bio-summary">Anna is a body sex coach through Betty Dodson.</p>
+                <button class="read-more-btn">Read More</button>
+            </div>
+        </div>
+        <div class="bio-details" id="anna">
+            <p>
+                Anna is a certified Bodysex®️ coach through the Betty Dodson Association in New York and offers emancipating sex education through pleasure-focused coaching, workshops, and retreats for women and female bodied people. Her mission is to support women in removing shame and guilt around their sexual pleasure and replacing it with self-knowledge—particularly around the female body and the female model of arousal. She was fortunate to grow up in a sex-positive family, where sex was never a taboo subject.
+            </p>
         </div>
     </section>
 
     <!-- Dr C -->
-    <section class="bio-preview">
-        <img src="images/Dr Corynna.jpg" alt="Dr C" class="bio-img">
-        <div class="bio-text">
-            <h2 class="bio-title">Dr C</h2>
-            <p>Dr Corynna Clarke has been teaching Tantra for over 38 years. She has helped countless women.</p>
-            <a href="bio.html#corynna">Read More</a>
+    <section class="bio-card">
+        <div class="bio-preview" onclick="toggleBio('corynna')">
+            <img src="assets/images/Dr Corynna.jpg" alt="Dr C" class="bio-img">
+            <div class="bio-text">
+                <h2 class="bio-title">Dr C</h2>
+                <p class="bio-summary">Dr Corynna Clarke has been teaching Tantra for over 38 years. She has helped countless women.</p>
+                <button class="read-more-btn">Read More</button>
+            </div>
+        </div>
+        <div class="bio-details" id="corynna">
+            <p>
+                Dr Corynna Clarke has been teaching Tantra for over 38 years. She has helped countless women overcome various sexual traumas and become empowered sexual Goddesses!! She's been on the front page of the Wall Street Journal as well as traveling the world to study a variety of traditions and religions. She is a Certified Tantra Educator through Source School of Tantra Yoga, is a Holistic Health Practitioner and has a Doctor of Divinity in Spiritual Counseling. She continues her ministry by working with women, those who identify as female as well as couples in virtual and private, in-person settings like the comfort of their own homes. She also leads workshops and seminars all over the world, guiding all people to overcome limitations, facilitating breakthroughs and providing coaching, ongoing support and mastery of her newly developed system Quantum Tantra to level their realities on a continual basis and providing quantum leaps in all aspects of their lives.
+            </p>
         </div>
     </section>
 
     <!-- Asttarte Deva -->
-    <section class="bio-preview">
-        <img src="images/Astarte Deva.jpg" alt="Asttarte Deva" class="bio-img">
-        <div class="bio-text">
-            <h2 class="bio-title">Asttarte Deva</h2>
-            <p>Asttarte is a Certified Tantra Teacher and Meditation guide.</p>
-            <a href="bio.html#asttarte">Read More</a>
+    <section class="bio-card">
+        <div class="bio-preview" onclick="toggleBio('asttarte')">
+            <img src="assets/images/Astarte Deva.jpg" alt="Asttarte Deva" class="bio-img">
+            <div class="bio-text">
+                <h2 class="bio-title">Asttarte Deva</h2>
+                <p class="bio-summary">Asttarte is a Certified Tantra Teacher and Meditation guide.</p>
+                <button class="read-more-btn">Read More</button>
+            </div>
+        </div>
+        <div class="bio-details" id="asttarte">
+            <p>
+                Asttarte is a Certified Breathwork Facilitator, Certified Tantra Teacher, Meditation Teacher, Certified
+                Somatic Stress Release Therapy, Reiki & Plant Medicine Assisted Psychotherapy.
+                Asttarte has been a Reiki Master, Holistic Healer & Practitioner since 1997. She
+                completed Usui Reiki, Kundalini Reiki, Shamballa Reiki, Tera-Mei Seichem and
+                Kundalini Reiki Master Certifications from 1997 to 2008. She completed Yoga
+                Teacher Trainings from 2000 to 2008, from Ashtanga Yoga, Hatha Yoga, Vinyasa
+                Yoga and Classic Yoga. She completed a 5 Element Shiatsu and Bodymind
+                Acupressure Training in 2002.
+            </p>
+            <p>
+                Asttarte became a Relationship, Intimacy & Tantra
+                Coach in 2010. After the love of her life passed away in 2022, she completed a 1
+                year Certified Conscious Connected Breathwork Facilitator and Teacher
+                Program. She also completed a one year Somatic Stress Release Therapy
+                Practitioner Certification Program. And she completed a 2 year Tantra Holistic
+                Health & Wellness Certification Program. She has written several books specific
+                to the healing for women and is completing her next book for women called Great
+                Sex After Marriage, Empowering the Married Goddess in the Bedroom.
+            </p>
+            <p>
+                Her next book, in honor of her late husband, is geared towards teaching the couple to help
+                each other grow, heal and transform together inside of the safe container of an
+                intimate relationship. This follows the book geared towards women called: The
+                Heart On, Opening the Heart of the Beloved, specific to help women heal their
+                deep seated fear to receive love, tools to help her partner and help him as well,
+                and practices of creating deep intimacy, creating forgiveness, acceptance and
+                love on a regular basis.
+            </p>
+            <p>
+                Private Sessions with Asttarte are available online and in person. She helps
+                women find their voice, couples find harmony and soul men go deeper on their
+                spiritual journey. She helps people come back to balance, find inner joy and bliss.
+                Astarte offers multiple modalities for couples, women and individuals and her
+                integrative style of helping people is unique because of her hands-on experience
+                working one on one with people for many years. She helps women with
+                depression, repression, stress, anxiety, grief, relationship problems, trauma,
+                communication to be authentically related and create deep profound self love
+                and love with her partner, physical health challenges, sleep issues, sexual
+                problems, sexual trauma, physical pain, the inner child, being fully self
+                expressed, communication challenges and to harness self love and feel more peace within.
+            </p>
         </div>
     </section>
 </main>
@@ -187,6 +344,24 @@
     </div>
     <p>© Quantum Tantra 2025. All rights reserved.</p>
 </footer>
+
+<script>
+    function toggleBio(id) {
+        const bioDetails = document.getElementById(id);
+        bioDetails.classList.toggle('expanded');
+
+        // Find the button within the same section
+        const section = bioDetails.closest('.bio-card');
+        const button = section.querySelector('.read-more-btn');
+
+        // Toggle button text
+        if (bioDetails.classList.contains('expanded')) {
+            button.textContent = 'Read Less';
+        } else {
+            button.textContent = 'Read More';
+        }
+    }
+</script>
 
 </body>
 </html>
