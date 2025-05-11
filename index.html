@@ -1,367 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantumtantra.life</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #6a3093;
-            --primary-gradient: linear-gradient(135deg, #6a3093 0%, #a044ff 100%);
-            --secondary-color: #f5f0ff;
-            --text-color: #333;
-            --light-text: #666;
-            --white: #fff;
-            --shadow: 0 4px 20px rgba(106, 48, 147, 0.15);
-            --transition: all 0.3s ease;
-            --border-radius: 12px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: var(--primary-gradient);
-            color: var(--white);
-            box-shadow: var(--shadow);
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        .slogan {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            text-align: center;
-            margin: 40px 0 20px;
-            color: var(--primary-color);
-        }
-
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .bio-card {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .bio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(106, 48, 147, 0.2);
-        }
-
-        .bio-preview {
-            display: flex;
-            align-items: center;
-            padding: 25px;
-            gap: 25px;
-            cursor: pointer;
-        }
-
-        .bio-img {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 50%;
-            flex-shrink: 0;
-            border: 3px solid var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .bio-text {
-            flex: 1;
-        }
-
-        .bio-title {
-            font-family: 'Playfair Display', serif;
-            margin: 0 0 10px 0;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-        }
-
-        .bio-summary {
-            margin-bottom: 15px;
-            color: var(--light-text);
-        }
-
-        .read-more-btn {
-            display: inline-block;
-            background: var(--primary-gradient);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            outline: none;
-        }
-
-        .read-more-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(106, 48, 147, 0.3);
-        }
-
-        .bio-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-            padding: 0 25px;
-        }
-
-        .bio-details.expanded {
-            max-height: 2000px;
-            padding-bottom: 25px;
-        }
-
-        .bio-details p {
-            margin-bottom: 15px;
-            line-height: 1.7;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            background: var(--primary-gradient);
-            color: var(--white);
-            margin-top: 40px;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .slogan {
-                font-size: 1.5rem;
-            }
-
-            .bio-preview {
-                padding: 20px;
-                gap: 15px;
-            }
-
-            .bio-img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .bio-title {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .bio-preview {
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: center;
-            }
-
-            .bio-img {
-                margin: 0 auto 15px;
-            }
-
-            .bio-title {
-                text-align: center;
-            }
-
-            .read-more-btn {
-                display: block;
-                margin: 0 auto;
-            }
-        }
-    </style>
+    <title>Quantum Tantra - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
 </head>
+
 <body>
-
-<header>
-    <h1>Quantumtantra.life</h1>
-    <p>Empowering individuals through transformative practices</p>
-</header>
-
-<div class="slogan">Meet Our Presenters</div>
-
-<main>
-    <!-- Anna Scheer -->
-    <section class="bio-card">
-        <div class="bio-preview" onclick="toggleBio('anna')">
-            <img src="assets/images/Anna Scheer.jpg" alt="Anna Scheer" class="bio-img">
-            <div class="bio-text">
-                <h2 class="bio-title">Anna Scheer</h2>
-                <p class="bio-summary">Anna is a body sex coach through Betty Dodson.</p>
-                <button class="read-more-btn">Read More</button>
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">quantr.life</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="presenter.html">Presenter</a>
             </div>
-        </div>
-        <div class="bio-details" id="anna">
-            <p>
-                Anna is a certified Bodysex®️ coach through the Betty Dodson Association in New York and offers emancipating sex education through pleasure-focused coaching, workshops, and retreats for women and female bodied people. Her mission is to support women in removing shame and guilt around their sexual pleasure and replacing it with self-knowledge—particularly around the female body and the female model of arousal. She was fortunate to grow up in a sex-positive family, where sex was never a taboo subject.
-            </p>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <!-- Dr C -->
-    <section class="bio-card">
-        <div class="bio-preview" onclick="toggleBio('corynna')">
-            <img src="assets/images/Dr Corynna.jpg" alt="Dr C" class="bio-img">
-            <div class="bio-text">
-                <h2 class="bio-title">Dr C</h2>
-                <p class="bio-summary">Dr Corynna Clarke has been teaching Tantra for over 38 years. She has helped countless women.</p>
-                <button class="read-more-btn">Read More</button>
+    <div class="article-container">
+        <div class="article-header">
+            <h1>Unshaming Female Pleasure: Permission, Power & Play</h1>
+        </div>
+
+        <div class="article-content">
+            <img src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Empowerment Illustration" class="article-image">
+
+            <h2>Let’s Get Real</h2>
+            <p><strong>Ladies</strong>—when was the last time you gave yourself full, unapologetic permission to ask for
+                what you truly want in the bedroom? When did you last feel zero shame about your pleasure, your body, or
+                your deepest desires? If you’re like most women, the answer is probably: <strong>“Not nearly
+                    enough.”</strong> And you know what? <em>That’s not your fault.</em></p>
+
+            <div class="highlight">
+                <p>For generations, female pleasure has been shamed, silenced, and sidelined—by society, by partners,
+                    and sometimes even by ourselves.</p>
             </div>
-        </div>
-        <div class="bio-details" id="corynna">
-            <p>
-                Dr Corynna Clarke has been teaching Tantra for over 38 years. She has helped countless women overcome various sexual traumas and become empowered sexual Goddesses!! She's been on the front page of the Wall Street Journal as well as traveling the world to study a variety of traditions and religions. She is a Certified Tantra Educator through Source School of Tantra Yoga, is a Holistic Health Practitioner and has a Doctor of Divinity in Spiritual Counseling. She continues her ministry by working with women, those who identify as female as well as couples in virtual and private, in-person settings like the comfort of their own homes. She also leads workshops and seminars all over the world, guiding all people to overcome limitations, facilitating breakthroughs and providing coaching, ongoing support and mastery of her newly developed system Quantum Tantra to level their realities on a continual basis and providing quantum leaps in all aspects of their lives.
-            </p>
-        </div>
-    </section>
 
-    <!-- Asttarte Deva -->
-    <section class="bio-card">
-        <div class="bio-preview" onclick="toggleBio('asttarte')">
-            <img src="assets/images/Astarte Deva.jpg" alt="Asttarte Deva" class="bio-img">
-            <div class="bio-text">
-                <h2 class="bio-title">Asttarte Deva</h2>
-                <p class="bio-summary">Asttarte is a Certified Tantra Teacher and Meditation guide.</p>
-                <button class="read-more-btn">Read More</button>
+            <h2>Why We’re Gathering</h2>
+            <p>That’s why we’re bringing you <strong>Unshaming Female Pleasure: Giving Ourselves Permission to Make
+                    Requests</strong>, an interactive Zoom panel designed for:</p>
+            <ul>
+                <li><strong>Real talk</strong></li>
+                <li><strong>Practical tools</strong></li>
+                <li><strong>Transformational experiences</strong></li>
+            </ul>
+
+            <h2>What’s on the Menu?</h2>
+
+            <h3>Amrita Unleashed: Demystifying Female Ejaculation</h3>
+            <p>Let’s bust the myths and mysteries around female ejaculation—also known as Amrita. For too long, this
+                natural phenomenon has been wrapped in secrecy and shame. We’ll explore:</p>
+            <ul>
+                <li>What Amrita really is</li>
+                <li>Why it’s nothing to be embarrassed about</li>
+                <li>How it can become a source of sacred empowerment</li>
+            </ul>
+
+            <div class="callout">
+                <p>Your pleasure is not a luxury; it’s your birthright.</p>
             </div>
-        </div>
-        <div class="bio-details" id="asttarte">
-            <p>
-                Asttarte is a Certified Breathwork Facilitator, Certified Tantra Teacher, Meditation Teacher, Certified
-                Somatic Stress Release Therapy, Reiki & Plant Medicine Assisted Psychotherapy.
-                Asttarte has been a Reiki Master, Holistic Healer & Practitioner since 1997. She
-                completed Usui Reiki, Kundalini Reiki, Shamballa Reiki, Tera-Mei Seichem and
-                Kundalini Reiki Master Certifications from 1997 to 2008. She completed Yoga
-                Teacher Trainings from 2000 to 2008, from Ashtanga Yoga, Hatha Yoga, Vinyasa
-                Yoga and Classic Yoga. She completed a 5 Element Shiatsu and Bodymind
-                Acupressure Training in 2002.
-            </p>
-            <p>
-                Asttarte became a Relationship, Intimacy & Tantra
-                Coach in 2010. After the love of her life passed away in 2022, she completed a 1
-                year Certified Conscious Connected Breathwork Facilitator and Teacher
-                Program. She also completed a one year Somatic Stress Release Therapy
-                Practitioner Certification Program. And she completed a 2 year Tantra Holistic
-                Health & Wellness Certification Program. She has written several books specific
-                to the healing for women and is completing her next book for women called Great
-                Sex After Marriage, Empowering the Married Goddess in the Bedroom.
-            </p>
-            <p>
-                Her next book, in honor of her late husband, is geared towards teaching the couple to help
-                each other grow, heal and transform together inside of the safe container of an
-                intimate relationship. This follows the book geared towards women called: The
-                Heart On, Opening the Heart of the Beloved, specific to help women heal their
-                deep seated fear to receive love, tools to help her partner and help him as well,
-                and practices of creating deep intimacy, creating forgiveness, acceptance and
-                love on a regular basis.
-            </p>
-            <p>
-                Private Sessions with Asttarte are available online and in person. She helps
-                women find their voice, couples find harmony and soul men go deeper on their
-                spiritual journey. She helps people come back to balance, find inner joy and bliss.
-                Astarte offers multiple modalities for couples, women and individuals and her
-                integrative style of helping people is unique because of her hands-on experience
-                working one on one with people for many years. She helps women with
-                depression, repression, stress, anxiety, grief, relationship problems, trauma,
-                communication to be authentically related and create deep profound self love
-                and love with her partner, physical health challenges, sleep issues, sexual
-                problems, sexual trauma, physical pain, the inner child, being fully self
-                expressed, communication challenges and to harness self love and feel more peace within.
-            </p>
-        </div>
-    </section>
-</main>
 
-<footer>
-    <p>Quantumtantra.life</p>
-    <!-- Social Media Links and Icons -->
-    <h3>Social Media</h3>
-    <div class="social-links">
-        <div class="social-item">
-            <a href="https://youtube.com/@goddesstemple528?si=mbRF4iONcySXU84D">YouTube Channel</a>
-            <img src="images/YouTube-icon.png" alt="YouTube Icon">
-        </div>
-        <div class="social-item">
-            <a href="https://facebook.com/corynnac">Facebook</a>
-            <img src="images/Facebook-icon.png" alt="Facebook Icon">
-        </div>
-        <div class="social-item">
-            <a href="https://instagram.com/drcorynnaclarke">Instagram</a>
-            <img src="images/Instagram-icon.png" alt="Instagram Icon">
-        </div>
-        <div class="social-item">
-            <a href="https://twitter.com/drcorynnaclarke">X (Twitter)</a>
-            <img src="images/X-icon.png" alt="X (Twitter) Icon">
-        </div>
-        <div class="social-item">
-            <a href="https://t.me/+T19nQmZC265jZjcx">Telegram</a>
-            <img src="images/telegram.png" alt="Telegram Icon">
+            <h3>Men Mastery: How Conscious Men Show Up</h3>
+            <p>How do conscious men show up as gods for their goddesses? We’re diving into:</p>
+            <ul>
+                <li>The art of holding the seed</li>
+                <li>The power of presence</li>
+                <li>Honoring the feminine essence</li>
+            </ul>
+
+            <h3>Sacred Relationships: Beyond the Surface</h3>
+            <p>What makes a partnership truly sacred? We’ll talk about:</p>
+            <ul>
+                <li>Building spiritual foundations</li>
+                <li>Practicing deep communication</li>
+                <li>Cultivating transcendent intimacy</li>
+            </ul>
+
+            <h2>What to Expect</h2>
+            <ul>
+                <li><strong>Live Q&A</strong> with Sexperts</li>
+                <li><strong>Breakout rooms</strong> for real connection</li>
+                <li><strong>Judgment-free</strong> community support</li>
+                <li><strong>Immediately applicable</strong> tools</li>
+            </ul>
+
+            <div class="callout">
+                <p>You are worthy of pleasure. You are worthy of being heard. You are worthy of joy, connection, and
+                    power—in the bedroom and beyond.</p>
+            </div>
         </div>
     </div>
-    <p>© Quantum Tantra 2025. All rights reserved.</p>
+
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-row">
+            <a href="index.html" class="logo">quantr.life</a>
+            <div class="social-links">
+                <a href="https://youtube.com/@goddesstemple528?si=mbRF4iONcySXU84D" class="social-item" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://facebook.com/corynnac" class="social-item" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/drcorynnaclarke" class="social-item" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/drcorynnaclarke" class="social-item" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://t.me/+T19nQmZC265jZjcx" class="social-item" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; Quantum Tantra 2025. All rights reserved.</p>
+    </div>
 </footer>
-
-<script>
-    function toggleBio(id) {
-        const bioDetails = document.getElementById(id);
-        bioDetails.classList.toggle('expanded');
-
-        // Find the button within the same section
-        const section = bioDetails.closest('.bio-card');
-        const button = section.querySelector('.read-more-btn');
-
-        // Toggle button text
-        if (bioDetails.classList.contains('expanded')) {
-            button.textContent = 'Read Less';
-        } else {
-            button.textContent = 'Read More';
-        }
-    }
-</script>
-
 </body>
+
 </html>
